@@ -27,10 +27,10 @@ public class VerificacionCrediticiaService {
     public String verificarCliente(@PathParam("idCliente") String idCliente) {
         TableroControl.incrementTotalRequests();
         String nombreCliente = getNombreCliente(idCliente);
-        if (nombreCliente.equals("Desconocido")) {
+        if (nombreCliente.equals("es desconocido")) {
             TableroControl.incrementRejectedRequests("ID=" + idCliente);
-            TableroControl.addRequestDetail("Verificar: " + idCliente + " - no encontrado");
-            return "Usuario no encontrado en el sistema";
+            TableroControl.addRequestDetail("Verificar: " + idCliente + " - no fue encontrado");
+            return "el U}usuario no fue encontrado en el sistema";
         }
         if (consultarBlackList(idCliente)) {
             TableroControl.incrementRejectedRequests("ID=" + idCliente + ", Nombre=" + nombreCliente);
@@ -104,7 +104,7 @@ public class VerificacionCrediticiaService {
     }
 
     private void enviarEmail(String destinatario, String mensaje) {
-        String remitente = "mrochac@uniempresarial.edu.co"; 
+        String remitente = "sgaleano@uniempresarial.edu.co"; 
         String clave = "Uempresarial@2024"; 
 
         Properties props = System.getProperties();

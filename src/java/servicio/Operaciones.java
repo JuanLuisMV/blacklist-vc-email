@@ -93,17 +93,16 @@ public class Operaciones {
         }
     }
 
-    @GET
-    @Path("lista")
+   
     @Produces(MediaType.APPLICATION_JSON)
     public List<Persona> Listar(){
         List<Persona> personas = new ArrayList<>();
         try {
-            //personas.add(new Persona(1, "Juan", "Garcia", new Date(90, 0, 10), 123456789, 3));
-            //personas.add(new Persona(2, "Maria", "Lopez", new Date(85, 1, 20), 987654321, 2));
-            //personas.add(new Persona(3, "Carlos", "Martinez", new Date(92, 2, 15), 456123789, 1));
-            //personas.add(new Persona(4, "Laura", "Gomez", new Date(88, 3, 25), 789456123, 4));
-            personas.add(new Persona(5, "Jose", "Rodriguez", new Date(95, 4, 30), 321654987, 5));
+           personas.add(new Persona(1, "luis", "varela", new Date(90, 0, 10), 123456789, 3));
+            //personas.add(new Persona(2, "Alejandra", "Garcia", new Date(85, 1, 20), 987654321, 2));
+            //personas.add(new Persona(3, "Mauricio", "vanegas", new Date(92, 2, 15), 456123789, 1));
+            //personas.add(new Persona(4, "lorenzo", "mesa", new Date(88, 3, 25), 789456123, 4));
+            personas.add(new Persona(5, "camilo", "quijano", new Date(86, 5, 18), 1104545842, 5));
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "Error listing personas", e);
             throw new RuntimeException("Error listing personas", e);
